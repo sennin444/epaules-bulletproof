@@ -521,3 +521,4 @@ p, li, q { text-wrap: pretty; }
 .how-grid { align-items: center; }
 .me-photo img { object-position: 50% 15%; }
 .stack .thumb { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; border: 0; background: none; }
+.mockup img { mix-blend-mode: multiply; }
