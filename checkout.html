@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paiement · Épaules Bulletproof</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.8-4.8 1.4 1.4-6.2 6.2z"/></symbol>
+  <symbol id="bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+</svg>
+
+<div class="mock-note">Maquette du checkout : aucun paiement n'est encaissé. Stripe sera branché avec les données de Christophe.</div>
+<div class="co-top"><div class="wrap"><span class="logo">NO PAIN MOVEMENT</span><span class="secure"><svg><use href="#lock"/></svg>Paiement sécurisé</span></div></div>
+<div class="co-timer">Prix de lancement : fin dans <span data-countdown>…</span></div>
+
+<main class="wrap co-grid">
+  <!-- Récap (à droite sur desktop) -->
+  <aside class="summary">
+    <div class="panel">
+      <div class="prod">
+        <img src="img/mockup-carre.jpg" alt="">
+        <div><h3>Épaules Bulletproof</h3><small>Programme 7 jours · Accès à vie</small></div>
+        <div class="amt"><span data-price></span> €</div>
+      </div>
+      <p style="margin:12px 0 0;font-size:14px;color:var(--ink-3)"><s class="was"><span data-price-after></span> €</s> · tu économises <span data-save></span> € <span class="badge sm">-<span data-pct></span> %</span> · prix de lancement jusqu'au 30/11</p>
+      <ul class="inc">
+        <li><svg><use href="#ok"/></svg>Programme 7 jours guidé en vidéo</li>
+        <li><svg><use href="#ok"/></svg>Échauffement épaule express</li>
+        <li><svg><use href="#ok"/></svg>Protocole Nuit (offert jusqu'au 30/11)</li>
+        <li><svg><use href="#ok"/></svg>Bilan Articulaire offert avec Christophe</li>
+      </ul>
+      <div class="totals">
+        <div><span>Épaules Bulletproof</span><span><span data-price></span> €</span></div>
+        <div data-bump-line hidden><span>Guide Feu Vert</span><span><span data-bump-price></span> €</span></div>
+        <div class="tot"><span>Total</span><span><span data-total></span> €</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Formulaire -->
+  <form class="panel" onsubmit="return false">
+    <div class="express"><span>Apple Pay</span><span class="g">Google Pay</span></div>
+    <div class="or">ou par carte</div>
+    <label class="field"><span>E-mail <small>(ton accès arrive ici)</small></span><div class="input ph">toi@exemple.fr</div></label>
+    <label class="field"><span>Prénom</span><div class="input ph">Ton prénom</div></label>
+    <label class="field"><span>Carte</span>
+      <div class="input ph card-num">1234 1234 1234 1234<span style="font-size:12px;letter-spacing:.04em">VISA · MC · CB</span></div>
+      <div class="card-row"><div class="input ph">MM / AA</div><div class="input ph">CVC</div></div>
+    </label>
+    <label class="field"><span>Pays</span><div class="input ph" style="color:var(--ink)">France</div></label>
+
+    <!-- ORDER BUMP : case non cochée par défaut -->
+    <div class="bump">
+      <label for="bump"><input type="checkbox" id="bump"><span class="t">Oui, j'ajoute le Guide Feu Vert pour <span data-bump-price></span> €</span></label>
+      <div class="feu" aria-hidden="true"><i style="background:#16A34A"></i><i style="background:#F59E0B"></i><i style="background:#DC2626"></i></div>
+      <p>Développé, tractions, dips, wall balls… Pour chaque mouvement qui coince, tu sais en 10 secondes si tu le gardes, si tu l'adaptes, ou par quoi le remplacer. 12 fiches + 1 vidéo de Christophe. Proposé uniquement ici.</p>
+    </div>
+
+    <label class="legal"><input type="checkbox">Je veux accéder au programme tout de suite et je renonce à mon droit de rétractation de 14 jours. Ma garantie satisfait ou remboursé de 14 jours reste valable.</label>
+
+    <button class="btn block" id="pay">Je soulage mon épaule · <span data-total></span> €</button>
+
+    <div class="assure">
+      <div><svg><use href="#shield"/></svg>Garantie 14 jours, remboursé sur simple e-mail</div>
+      <div><svg><use href="#bolt"/></svg>Accès immédiat par e-mail</div>
+      <div><svg><use href="#lock"/></svg>Paiement Stripe chiffré</div>
+    </div>
+    <div class="proof slot" data-proof-slot style="margin-top:18px;padding:16px"><span class="slot-tag">Avis court · en attente d'accord</span><q>Phrase réelle d'un client.</q><div class="who"><b>Prénom</b>, âge · sport</div></div>
+  </form>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
