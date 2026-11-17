@@ -61,22 +61,27 @@
   </div>
 </div>
 
-<!-- 3. Premiers retours -->
-<section id="avis" data-proof-slot>
+<!-- 3. Premiers retours (preuves réelles, citations mot pour mot) -->
+<section id="avis">
   <div class="wrap center">
-    <span class="kicker">Premiers retours</span>
+    <span class="kicker">Clients de Christophe</span>
     <h2>Ils s'entraînent à nouveau sans y penser</h2>
     <div class="proofs">
-      <div class="video-slot">
-        <span class="play" aria-hidden="true"></span>
-        <span class="slot-tag" style="align-self:flex-start">Vidéo · Rayan</span>
-        <b>Interview de Rayan, suivi par Christophe</b>
-        <small>Extrait de 30 s à monter depuis « INTERVIEW V3 RAYAN » · accord écrit à confirmer</small>
+      <figure class="vid">
+        <video src="img/rayan-bench.mp4" poster="img/rayan-bench-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Rayan au développé couché, quelques semaines après son suivi"></video>
+        <figcaption><b>Rayan</b> · musculation<br>Blessé au bench. Ici, quelques semaines plus tard.</figcaption>
+      </figure>
+      <div class="proof real">
+        <div class="score" aria-label="Douleur passée de 8 sur 10 à 0 sur 10"><span class="from">8/10</span><span class="arrow">→</span><span class="to">0/10</span></div>
+        <q>J'avais la douleur sur l'échelle de 1 à 10 […] Elle était vers 8 et là, elle est à 0.</q>
+        <div class="who"><img src="img/preuve-rayan.jpg" alt=""><span><b>Rayan</b> · musculation<br>Suivi individuel · 3 mois</span></div>
       </div>
-      <div class="proof slot"><span class="slot-tag">Témoignage · en attente d'accord</span><q>Phrase exacte du client, sur l'avant puis l'après.</q><div class="who"><b>Prénom</b>, âge · sport</div></div>
-      <div class="proof slot"><span class="slot-tag">Capture DM ou avis · en attente</span><q>Capture d'écran d'un message ou d'un avis Google, avec accord.</q><div class="who"><b>Prénom</b>, âge · sport</div></div>
+      <div class="proof real">
+        <q>Maintenant là ouais je vis sans douleur, franchement j'y pense quasiment plus.</q>
+        <div class="who"><img src="img/preuve-jeremy.jpg" alt=""><span><b>Jérémy</b>, 35 ans · CrossFit<br>Les deux épaules · suivi 3 mois</span></div>
+      </div>
     </div>
-    <p class="proof-note">Témoignages de sportifs accompagnés par Christophe en suivi individuel.</p>
+    <p class="proof-note">Clients de Christophe accompagnés en suivi individuel, sur environ 3 mois. Ce ne sont pas des résultats du programme de 7 jours. Les résultats varient selon les personnes.</p>
   </div>
 </section>
 
@@ -173,16 +178,32 @@
   </div>
 </section>
 
-<!-- 8. Études de cas (affichées seulement avec 2 cas réels : retirer hidden) -->
-<section hidden data-proof-slot style="padding-top:0">
+<!-- 8. Études de cas (preuves réelles) -->
+<section style="padding-top:0">
   <div class="wrap">
-    <span class="kicker">Études de cas</span>
+    <span class="kicker">Avant / après</span>
     <h2>Ils avaient la même épaule que toi</h2>
     <div class="cases">
-      <div class="proof slot case"><span class="slot-tag">Cas réel · musculation</span><h3>Prénom, âge</h3><dl><dt>Avant</dt><dd>Ex. : charges baissées au développé couché</dd><dt>Ce qu'il a fait</dt><dd>Suivi avec Christophe</dd><dt>Après</dt><dd>Résultat décrit par le client, avec son délai</dd></dl></div>
-      <div class="proof slot case"><span class="slot-tag">Cas réel · CrossFit</span><h3>Prénom, âge</h3><dl><dt>Avant</dt><dd>Ex. : pincement au-dessus de la tête</dd><dt>Ce qu'elle a fait</dt><dd>Suivi avec Christophe</dd><dt>Après</dt><dd>Résultat décrit par la cliente, avec son délai</dd></dl></div>
-      <div class="proof slot case"><span class="slot-tag">Cas réel · 45 ans et plus</span><h3>Prénom, âge</h3><dl><dt>Avant</dt><dd>Ex. : « c'est l'âge », séances adaptées</dd><dt>Ce qu'il a fait</dt><dd>Suivi avec Christophe</dd><dt>Après</dt><dd>Résultat décrit par le client, avec son délai</dd></dl></div>
+      <div class="proof case">
+        <img class="case-img" src="img/preuve-rayan-bench.jpg" style="object-position:50% 75%" alt="Rayan au développé couché">
+        <span class="tag">Musculation</span><h3>Rayan</h3>
+        <dl><dt>Avant</dt><dd>Blessé après un bench lourd. <q>Je ne pouvais plus rien faire. Que ce soit pompe, dips, même une rep, c'était impossible.</q></dd>
+        <dt>Après 3 mois de suivi</dt><dd>Douleur passée de 8 à 0. Il refait du développé couché, sans douleur, ni le lendemain.</dd></dl>
+      </div>
+      <div class="proof case">
+        <img class="case-img" src="img/preuve-jeremy.jpg" alt="Jérémy pendant son interview">
+        <span class="tag">CrossFit</span><h3>Jérémy, 35 ans</h3>
+        <dl><dt>Avant</dt><dd>Les deux épaules, mal au repos et la nuit, sport arrêté. <q>tout ce que j'aimais bien, gym, haltéro, c'est tout ce que je pouvais plus faire.</q></dd>
+        <dt>Après 3 mois de suivi</dt><dd><q>L'autre fois, je me suis amusé à faire du handstand et de la marche sur les mains, j'avais pas de douleur.</q></dd></dl>
+      </div>
+      <div class="proof case">
+        <img class="case-img" src="img/preuve-maite.jpg" style="object-position:50% 60%" alt="Maïté montre l'amplitude de son bras">
+        <span class="tag">Pole dance</span><h3>Maïté, 39 ans</h3>
+        <dl><dt>Avant</dt><dd>Mal en levant le bras, la nuit. <q>je n'avais vraiment pas envie parce que j'adore mon sport.</q></dd>
+        <dt>Après 3 mois de suivi</dt><dd>Plus de douleur à droite, presque plus à gauche. <q>Et puis moi, les résultats sont là, donc je n'ai pas de doute sur la méthode.</q></dd></dl>
+      </div>
     </div>
+    <p class="proof-note">Clients de Christophe accompagnés en suivi individuel, sur environ 3 mois. Ce ne sont pas des résultats du programme de 7 jours. Les résultats varient selon les personnes.</p>
   </div>
 </section>
 
@@ -248,17 +269,17 @@
   </div>
 </section>
 
-<!-- 12. Encore des retours (retirer hidden quand les captures sont là) -->
-<section hidden data-proof-slot style="padding-top:0">
+<!-- 12. Encore des retours (preuves réelles) -->
+<section style="padding-top:0">
   <div class="wrap center">
     <span class="kicker">Encore des retours</span>
     <h2>Des sportifs qui continuent à s'entraîner</h2>
     <div class="proofs">
-      <div class="proof slot"><span class="slot-tag">Capture · en attente d'accord</span><q>DM, avis Google ou commentaire Insta.</q><div class="who"><b>Prénom</b> · sport</div></div>
-      <div class="proof slot"><span class="slot-tag">Capture · en attente d'accord</span><q>DM, avis Google ou commentaire Insta.</q><div class="who"><b>Prénom</b> · sport</div></div>
-      <div class="proof slot"><span class="slot-tag">Capture · en attente d'accord</span><q>DM, avis Google ou commentaire Insta.</q><div class="who"><b>Prénom</b> · sport</div></div>
+      <div class="proof real"><q>j'ai réussi à faire les 10, 3 fois unbroken, sans gêne, sans douleur.</q><div class="who"><span><b>Jérémy</b>, 35 ans · CrossFit<br>Pompes, avant faites sur les genoux</span></div></div>
+      <div class="proof real"><q>quand je l'ai fait, j'étais content parce qu'il n'y avait aucune douleur.</q><div class="who"><span><b>Rayan</b> · musculation<br>Test final au développé couché</span></div></div>
+      <div class="proof real"><q>et maintenant vu les résultats que j'ai après trois mois j'en suis convaincue</q><div class="who"><span><b>Maïté</b>, 39 ans · pole dance<br>Suivie à distance, en visio</span></div></div>
     </div>
-    <p class="proof-note">Témoignages de sportifs accompagnés par Christophe en suivi individuel.</p>
+    <p class="proof-note">Clients de Christophe accompagnés en suivi individuel, sur environ 3 mois. Ce ne sont pas des résultats du programme de 7 jours. Les résultats varient selon les personnes.</p>
   </div>
 </section>
 
