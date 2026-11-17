@@ -107,6 +107,17 @@
     $$("[data-reveal]").forEach(function (el) { el.classList.add("in"); });
   }
 
+  // Check-list : compteur
+  var cl = document.querySelector("[data-checklist]"), cc = document.querySelector("[data-check-count]");
+  if (cl && cc) cl.addEventListener("change", function () {
+    var n = cl.querySelectorAll("input:checked").length;
+    cc.innerHTML = n === 0 ? "Coche les cases qui te ressemblent." : "<b>" + n + "/6</b> coché" + (n > 1 ? "es" : "e") + ".";
+  });
+
+  // Une seule vidéo témoignage à la fois
+  var vids = Array.prototype.slice.call(document.querySelectorAll(".story-vid video"));
+  vids.forEach(function (v) { v.addEventListener("play", function () { vids.forEach(function (o) { if (o !== v) o.pause(); }); }); });
+
   // Meta Pixel
   if (c.metaPixelId) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');

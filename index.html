@@ -93,14 +93,15 @@
   <div class="narrow">
     <span class="kicker">Est-ce que ça te parle ?</span>
     <h2>Coche ce qui te ressemble</h2>
-    <ul class="pains">
-      <li>Tu zappes les développés, les tractions ou tout ce qui passe au-dessus de la tête.</li>
-      <li>Tu as baissé tes charges, et tu as l'impression de régresser.</li>
-      <li>Tu adaptes chaque séance, et tu réfléchis 400 fois avant chaque mouvement.</li>
-      <li>Ça s'en va, ça revient. Tu ne sais jamais quand ça va pincer.</li>
-      <li>Ton épaule te réveille la nuit quand tu dors dessus.</li>
-      <li>Kiné, ostéo, repos, IRM : tu as déjà essayé beaucoup de choses, et ça revient quand même.</li>
+    <ul class="pains checklist" data-checklist>
+      <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Tu zappes les développés, les tractions ou tout ce qui passe au-dessus de la tête.</span></label></li>
+      <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Tu as baissé tes charges, et tu as l'impression de régresser.</span></label></li>
+      <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Tu adaptes chaque séance, et tu réfléchis 400 fois avant chaque mouvement.</span></label></li>
+      <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Ça s'en va, ça revient. Tu ne sais jamais quand ça va pincer.</span></label></li>
+      <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Ton épaule te réveille la nuit quand tu dors dessus.</span></label></li>
+      <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Kiné, ostéo, repos, IRM : tu as déjà essayé beaucoup de choses, et ça revient quand même.</span></label></li>
     </ul>
+    <p class="check-count" data-check-count aria-live="polite">Coche les cases qui te ressemblent.</p>
     <p class="bridge">Si tu as coché au moins une case, ce n'est pas ta motivation le problème. C'est la méthode qu'on t'a donnée.</p>
   </div>
 </section>
@@ -255,7 +256,10 @@
     <h2>Trois sportifs, trois épaules, le même déclic</h2>
     <div class="stories">
       <article class="story" data-reveal>
-        <img class="story-img" src="img/preuve-rayan-bench.jpg" style="object-position:50% 75%" alt="">
+        <figure class="story-vid">
+          <video src="img/temoignage-rayan.mp4" poster="img/temoignage-rayan-poster.jpg" controls playsinline preload="none" aria-label="Extrait de l'interview vidéo de Rayan avec Christophe"></video>
+          <figcaption><span class="play" aria-hidden="true"></span>Rayan raconte, en vidéo · 36 s</figcaption>
+        </figure>
         <div class="story-body">
           <span class="tag">Musculation</span>
           <h3>De 8/10 à 0 : il est revenu au développé couché</h3>
@@ -267,7 +271,10 @@
         </div>
       </article>
       <article class="story" data-reveal>
-        <img class="story-img" src="img/preuve-jeremy.jpg" style="object-position:50% 30%" alt="">
+        <figure class="story-vid">
+          <video src="img/temoignage-jeremy.mp4" poster="img/temoignage-jeremy-poster.jpg" controls playsinline preload="none" aria-label="Extrait de l'interview vidéo de Jérémy avec Christophe"></video>
+          <figcaption><span class="play" aria-hidden="true"></span>Jérémy raconte, en vidéo · 28 s</figcaption>
+        </figure>
         <div class="story-body">
           <span class="tag">CrossFit</span>
           <h3>Les deux épaules à l'arrêt. Aujourd'hui : handstand et HSPU sans douleur</h3>
@@ -279,7 +286,10 @@
         </div>
       </article>
       <article class="story" data-reveal>
-        <img class="story-img" src="img/preuve-maite.jpg" style="object-position:50% 60%" alt="">
+        <figure class="story-vid">
+          <video src="img/temoignage-maite.mp4" poster="img/temoignage-maite-poster.jpg" controls playsinline preload="none" aria-label="Extrait de l'interview vidéo de Maïté avec Christophe"></video>
+          <figcaption><span class="play" aria-hidden="true"></span>Maïté raconte, en vidéo · 22 s</figcaption>
+        </figure>
         <div class="story-body">
           <span class="tag">Pole dance</span>
           <h3>Elle refusait d'arrêter la pole. Elle n'a pas eu à le faire</h3>
