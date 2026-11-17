@@ -1,7 +1,14 @@
 (function () {
   var c = window.EB_CONFIG || {};
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
-  var pct = Math.round((1 - c.price / c.priceAfter) * 100);
+  var pct = c.discountPct || Math.round((1 - c.price / c.priceAfter) * 100);
+  // Après la fin du lancement : prix plein, plus de bandeau ni de prix barré
+  var ended = c.launchEndsAt && Date.now() > new Date(c.launchEndsAt).getTime();
+  if (ended) {
+    c = Object.assign({}, c, { price: c.priceAfter, showDiscountBadge: false });
+    $$("[data-launch-only], s.was, .big-was, .sticky s").forEach(function (el) { el.hidden = true; el.style.display = "none"; });
+  }
+  if (c.showMockTags === false) $$(".mock-tag, .mock-note").forEach(function (el) { el.remove(); });
 
   $$("[data-price]").forEach(function (el) { el.textContent = c.price; });
   $$("[data-price-after]").forEach(function (el) { el.textContent = c.priceAfter; });
@@ -16,17 +23,14 @@
   // Liens
   $$("[data-checkout]").forEach(function (a) {
     a.href = c.checkoutUrl || "#paiement";
-    a.addEventListener("click", function () { if (window.fbq) fbq("track", "InitiateCheckout", { value: c.price, currency: "EUR" }); });
   });
   $$("[data-access]").forEach(function (a) { if (c.accessUrl) a.href = c.accessUrl; });
   $$("[data-calendly]").forEach(function (a) { if (c.calendlyUrl) a.href = c.calendlyUrl; });
 
-  // Places Bilan
-  $$("[data-slotbar]").forEach(function (bar) {
-    var n = c.bilanSlotsPerWeek || 10;
-    bar.style.gridTemplateColumns = "repeat(" + n + ", 1fr)";
-    for (var i = 0; i < n; i++) { var x = document.createElement("i"); if (i < Math.ceil(n * 0.4)) x.className = "taken"; bar.appendChild(x); }
-  });
+  // Meta : InitiateCheckout une seule fois, quand on commence vraiment à payer
+  var icSent = false;
+  function ic() { if (icSent || !window.fbq) return; icSent = true; fbq("track", "InitiateCheckout", { value: c.price, currency: "EUR" }); }
+  $$("[data-ic]").forEach(function (el) { el.addEventListener("focus", ic); el.addEventListener("click", ic); });
 
   // Compte à rebours
   var end = new Date(c.launchEndsAt).getTime(), cds = $$("[data-countdown]");
@@ -61,9 +65,13 @@
     };
     bump.addEventListener("change", paint); paint();
     var pay = document.getElementById("pay");
+    var consent = document.getElementById("consent"), err = document.getElementById("consent-err"), wrap = document.getElementById("consent-wrap");
+    if (consent) consent.addEventListener("change", function () { if (consent.checked) { err.hidden = true; wrap.classList.remove("need"); } });
     pay.addEventListener("click", function (e) {
       e.preventDefault();
-      location.href = "merci" + (bump.checked ? "?bump=1" : "");
+      if (consent && !consent.checked) { err.hidden = false; wrap.classList.add("need"); consent.focus(); return; }
+      ic();
+      location.href = "merci?total=" + (c.price + (bump.checked ? c.bumpPrice : 0)) + (bump.checked ? "&bump=1" : "");
     });
   }
 
@@ -122,5 +130,7 @@
   if (c.metaPixelId) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq("init", c.metaPixelId); fbq("track", "PageView");
+    var mt = /[?&]total=(\d+)/.exec(location.search);
+    if (mt && /merci/.test(location.pathname)) fbq("track", "Purchase", { value: +mt[1], currency: "EUR" });
   }
 })();

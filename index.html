@@ -28,7 +28,7 @@
 </svg>
 
 <!-- 0. Bandeau rareté (1 ligne) -->
-<div class="launch" role="status"><span class="badge sm">-<span data-pct></span>&nbsp;%</span> Black Friday · <b><span data-price></span>&nbsp;€</b> <s><span data-price-after></span>&nbsp;€</s> · fin dans <span class="timer" data-countdown data-compact>…</span></div>
+<div class="launch" role="status" data-launch-only><span class="badge sm">-<span data-pct></span>&nbsp;%</span> Black Friday · <b><span data-price></span>&nbsp;€</b> <s><span data-price-after></span>&nbsp;€</s> · fin dans <span class="timer" data-countdown data-compact>…</span></div>
 
 <!-- 1. Hero navy -->
 <header class="hero">
@@ -39,15 +39,16 @@
         <span class="eyebrow">Tu as mal à l'épaule lorsque tu lèves le bras ?</span>
         <h1>7 jours pour soulager ton épaule</h1>
         <p class="subhead">Un protocole de 8 minutes créé par un kiné spécialiste de l'épaule pour soulager ta douleur <em>tout en continuant à t'entraîner</em>.</p>
-        <figure class="hero-photo-m"><img src="img/hero-epaule-m.jpg" alt="Christophe, kiné du sport, tient une épaule anatomique dans sa main" width="800" height="450" fetchpriority="high"></figure>
+        <figure class="hero-photo-m"><img src="img/hero-epaule-m.jpg" alt="Christophe sourit, une épaule anatomique en 3D au-dessus de sa main" width="800" height="450" fetchpriority="high"></figure>
         <div class="cta">
           <a class="btn" data-checkout href="#paiement">Je soulage mon épaule <span class="arr">→</span></a>
           <div class="price-line"><s class="was"><span data-price-after></span> €</s> <b><span data-price></span> €</b> <span class="badge sm">-<span data-pct></span> %</span> · Accès à vie · Garantie 14 jours</div>
+          <a class="hero-proof" href="#avis"><span class="avs"><img src="img/av-rayan.jpg" alt="" width="28" height="28"><img src="img/av-jeremy.jpg" alt="" width="28" height="28"><img src="img/av-maite.jpg" alt="" width="28" height="28"></span><span><b>18 k sportifs</b> suivent Christophe sur Instagram</span></a>
         </div>
       </div>
       <figure class="hero-photo hero-photo-d">
-        <img src="img/hero-epaule.jpg" alt="Christophe, kiné du sport, tient une épaule anatomique dans sa main" width="1440" height="960" loading="lazy">
-        <figcaption><b>Christophe</b>, kiné du sport, ne travaille que sur l'épaule des sportifs.</figcaption>
+        <img src="img/hero-epaule.jpg" alt="Christophe sourit, une épaule anatomique en 3D au-dessus de sa main" width="1440" height="960" loading="lazy">
+        <figcaption><b>Christophe</b> ne travaille que sur l'épaule des sportifs.</figcaption>
       </figure>
     </div>
   </div>
@@ -58,34 +59,23 @@
   <div class="wrap">
     <ul>
       <li><b><span data-count="18">18</span> k</b>sportifs suivent Christophe sur Instagram</li>
-      <li><b><span data-count="100">100</span> %</b>épaule. Rien d'autre.</li>
-      <li><b><span data-count="14">14</span> j</b>garantie satisfait ou remboursé</li>
+      <li><b><span data-count="8">8</span> min</b>par jour, en échauffement</li>
+      <li><b><span data-count="1">1</span></b>élastique suffit, chez toi ou à la salle</li>
     </ul>
   </div>
 </div>
 
-<!-- 3. Premiers retours : formats variés (vidéo, chiffre, 3 sports) -->
+<!-- 3. Premiers retours : une rangée, un client par carte -->
 <section id="avis">
   <div class="wrap center">
     <span class="kicker">Clients de Christophe</span>
     <h2>Ils s'entraînent à nouveau sans y penser</h2>
-    <div class="proofs top-proofs">
-      <figure class="vid" data-reveal>
-        <video src="img/rayan-bench.mp4" poster="img/rayan-bench-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Rayan au développé couché, quelques semaines après son suivi"></video>
-        <figcaption><b>Rayan</b> · musculation<br>Blessé au bench. Ici, quelques semaines plus tard.</figcaption>
-      </figure>
-      <div class="proof real" data-reveal>
-        <div class="score" aria-label="Douleur passée de 8 sur 10 à 0 sur 10"><span class="from">8/10</span><span class="arrow">→</span><span class="to"><span data-count="0" data-from="8">0</span>/10</span></div>
-        <q>J'avais la douleur sur l'échelle de 1 à 10 […] Elle était vers 8 et là, elle est à 0.</q>
-        <div class="who"><img src="img/av-rayan.jpg" alt="" width="60" height="60" loading="lazy"><span><b>Rayan</b> · musculation<br>Suivi individuel · 3 mois</span></div>
-      </div>
-      <div class="mini-proofs" data-reveal>
-        <div class="mini"><img src="img/av-rayan.jpg" alt="" width="60" height="60" loading="lazy"><b>Rayan</b><span>Muscu</span><em>Bench sans douleur</em></div>
-        <div class="mini"><img src="img/av-jeremy.jpg" alt="" width="60" height="60" loading="lazy"><b>Jérémy, 35</b><span>CrossFit</span><em>HSPU et handstand</em></div>
-        <div class="mini"><img src="img/av-maite.jpg" alt="" width="60" height="60" loading="lazy"><b>Maïté, 39</b><span>Pole dance</span><em>Bras levé sans douleur</em></div>
-      </div>
+    <div class="quick-proofs">
+      <a class="qp" href="#histoire-rayan" data-reveal><img src="img/av-rayan.jpg" alt="" width="56" height="56" loading="lazy"><span class="who"><b>Rayan</b> · musculation</span><span class="res">8/10 → <span data-count="0" data-from="8">0</span>/10</span><span class="what">Développé couché sans douleur</span></a>
+      <a class="qp" href="#histoire-jeremy" data-reveal><img src="img/av-jeremy.jpg" alt="" width="56" height="56" loading="lazy"><span class="who"><b>Jérémy, 35</b> · CrossFit</span><span class="res">Handstand</span><span class="what">HSPU et WOD sans douleur</span></a>
+      <a class="qp" href="#histoire-maite" data-reveal><img src="img/av-maite.jpg" alt="" width="56" height="56" loading="lazy"><span class="who"><b>Maïté, 39</b> · pole dance</span><span class="res">Bras levé</span><span class="what">Elle a gardé son sport</span></a>
     </div>
-    <p class="proof-note">Clients de Christophe accompagnés en suivi individuel, sur environ 3 mois. Ce ne sont pas des résultats du programme de 7 jours. Les résultats varient selon les personnes. <a href="#temoignages">Lire leurs histoires en entier ↓</a></p>
+    <p class="proof-note">Clients de Christophe accompagnés en suivi individuel, sur environ 3 mois. Ce ne sont pas des résultats du programme de 7 jours. Les résultats varient selon les personnes.</p>
   </div>
 </section>
 
@@ -103,7 +93,7 @@
       <li><label><input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="txt">Kiné, ostéo, repos, IRM : tu as déjà essayé beaucoup de choses, et ça revient quand même.</span></label></li>
     </ul>
     <p class="check-count" data-check-count aria-live="polite">Coche les cases qui te ressemblent.</p>
-    <p class="bridge">Si tu as coché au moins une case, ce n'est pas ta motivation le problème. C'est la méthode qu'on t'a donnée.</p>
+    <p class="bridge">Si tu as coché au moins une case, ton épaule n'est pas fichue. Il lui manque juste les bons exercices, dans le bon ordre.</p>
   </div>
 </section>
 
@@ -135,15 +125,15 @@
   </div>
 </section>
 
-<!-- 6. Mécanisme + test 10 secondes -->
-<section style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<!-- 6. Mécanisme -->
+<section class="mech-navy">
   <div class="narrow mech-solo">
     <figure class="mech-face"><img src="img/christophe-explique.jpg" alt="Christophe explique sa méthode face caméra" width="900" height="1126" loading="lazy"></figure>
     <div>
       <h2>Ton épaule ne lâche pas. Elle se protège.</h2>
       <p class="oneliner">Ton épaule te dit elle-même quels exercices l'aident. Il suffit de lui poser la question dans le bon ordre.</p>
       <p>Quand ton épaule pince, ce n'est pas forcément qu'elle est abîmée. Souvent, elle freine un mouvement qu'elle ne contrôle plus assez bien. Le repos calme la douleur un temps, mais ne lui réapprend rien. Les élastiques au hasard non plus.</p>
-      <p>Christophe utilise en cabinet une approche simple, la <b>modification de symptômes</b> :</p>
+      <p>En cabinet, Christophe utilise une approche simple, la <b>modification de symptômes</b>. En clair : on teste, on compare, on garde ce qui soulage.</p>
       <ol class="steps">
         <li><div><b>Un mouvement repère.</b>Celui qui coince : lever le bras, un développé, une traction.</div></li>
         <li><div><b>Un exercice ciblé.</b>Une minute, guidé en vidéo.</div></li>
@@ -154,12 +144,37 @@
   </div>
 </section>
 
+<!-- 6b. Une histoire complète, juste après le mécanisme -->
+<section class="story-up">
+  <div class="wrap">
+    <h2>Jérémy avait mal au repos, la nuit, au travail. Voilà où il en est</h2>
+    <div class="stories">
+      <article class="story" id="histoire-jeremy" data-reveal>
+        <figure class="story-vid">
+          <video src="img/temoignage-jeremy.mp4" poster="img/temoignage-jeremy-poster.jpg" controls playsinline preload="none" controlslist="nodownload" aria-label="Extrait de l'interview vidéo de Jérémy avec Christophe"></video>
+          <figcaption><span class="play" aria-hidden="true"></span>Jérémy raconte · 28 s · sous-titré</figcaption>
+        </figure>
+        <div class="story-body">
+          <span class="tag">CrossFit</span>
+          <h3>Des deux épaules à l'arrêt au handstand sans douleur</h3>
+          <p class="ctx"><b>Jérémy, 35 ans</b> · CrossFit et foot, sport arrêté pendant des mois</p>
+          <blockquote><q>C'était beaucoup de douleurs au repos, au travail, dans le sport, du coup arrêt du sport, en espérant que ça passe mais ça n'a pas fonctionné.</q><cite>Avant</cite></blockquote>
+          <blockquote><q>j'ai réussi à faire les 10, 3 fois unbroken, sans gêne, sans douleur.</q><cite>Ses pompes, avant faites sur les genoux</cite></blockquote>
+          <blockquote><q>L'autre fois, je me suis amusé à faire du handstand et de la marche sur les mains, j'avais pas de douleur.</q><cite>Après 3 mois</cite></blockquote>
+          <p class="res"><svg class="ico ico-trust"><use href="#ok"/></svg><span>Il vit sans douleur et a repris ses WOD : HSPU, handstand walk, clean and jerk.</span></p>
+        </div>
+      </article>
+    </div>
+    <p class="proof-note">Client de Christophe accompagné en suivi individuel, sur environ 3 mois. Ce n'est pas un résultat du programme de 7 jours. Les résultats varient selon les personnes.</p>
+  </div>
+</section>
+
 <!-- 7. Comment ça marche + mockup -->
 <section>
   <div class="wrap how-grid">
-    <div class="mockup"><picture><source media="(max-width: 699px)" srcset="img/mockup-m.jpg"><img src="img/mockup-v1.jpg" alt="Le programme Épaules Bulletproof sur ordinateur et téléphone, avec ses 3 bonus" width="1200" height="800" loading="lazy"></picture></div>
+    <div class="mockup"><img src="img/mockup-produit.jpg" alt="Le programme Épaules Bulletproof sur ordinateur et téléphone" width="1200" height="547" loading="lazy"></div>
     <div>
-      <h2>Rejoins les 7 jours Épaules Bulletproof</h2>
+      <h2>Comment se passent tes 7 jours</h2>
       <div class="cards">
         <div class="card"><span class="n">1</span><div><h3>Lance la vidéo du jour</h3><p>Une vidéo courte : Christophe montre, tu reproduis. Un élastique suffit.</p></div></div>
         <div class="card"><span class="n">2</span><div><h3>Découvre ce que ton épaule ressent</h3><p>Tu notes, et tu sais tout de suite ce qui la soulage et ce qui l'agace.</p></div></div>
@@ -174,11 +189,11 @@
   <div class="narrow">
     <h2>Tout ce que tu reçois aujourd'hui</h2>
     <div class="stack">
-      <div class="row"><svg class="ico ico-trust"><use href="#ok"/></svg><div><span class="lab">Programme</span><h3>Le challenge 7 jours Épaules Bulletproof</h3><p>7 vidéos guidées, le test pour trouver tes exercices, et ta routine finale. Accès à vie.</p></div></div>
-      <div class="row"><svg class="ico ico-trust"><use href="#ok"/></svg><div><span class="lab">Bonus 1</span><h3>L'échauffement épaule express</h3><p>La version 5 minutes pour les jours où tu es pressé.</p></div></div>
-      <div class="row"><svg class="ico ico-trust"><use href="#ok"/></svg><div><span class="lab">Bonus 2</span><h3>« Ton IRM ne dit pas tout »</h3><p>Ce que veulent vraiment dire les mots de ton compte rendu, sans paniquer.</p></div></div>
-      <div class="row"><svg class="ico ico-trust"><use href="#ok"/></svg><div><span class="lab">Bonus 3</span><h3>Le Protocole Nuit</h3><p>Les positions et mouvements doux pour les épaules qui te réveillent quand tu dors dessus.</p><span class="lim">Offert jusqu'au 30/11</span></div></div>
-      <div class="row"><svg class="ico ico-trust"><use href="#ok"/></svg><div><span class="lab">Bonus 4</span><h3>Le Bilan Articulaire offert avec Christophe</h3><p>Un appel visio à la fin de tes 7 jours pour faire le point sur ton épaule et savoir quoi faire ensuite.</p><div class="slots" data-slotbar></div><span class="lim">Places limitées : <span data-slots></span> par semaine</span></div></div>
+      <div class="row"><img class="thumb" src="img/bonus-programme.jpg" alt="Coffret Épaules Bulletproof" width="56" height="56" loading="lazy"><div><span class="lab">Programme</span><h3>Le challenge 7 jours Épaules Bulletproof</h3><p>7 vidéos guidées, le test pour trouver tes exercices, et ta routine finale. Accès à vie.</p></div></div>
+      <div class="row"><img class="thumb" src="img/bonus-echauffement.jpg" alt="" width="56" height="56" loading="lazy"><div><span class="lab">Bonus 1</span><h3>L'échauffement épaule express</h3><p>La version 5 minutes pour les jours où tu es pressé.</p></div></div>
+      <div class="row"><img class="thumb" src="img/bonus-irm.jpg" alt="" width="56" height="56" loading="lazy"><div><span class="lab">Bonus 2</span><h3>« Ton IRM ne dit pas tout »</h3><p>Ce que veulent vraiment dire les mots de ton compte rendu, sans paniquer.</p></div></div>
+      <div class="row"><img class="thumb" src="img/bonus-nuit.jpg" alt="" width="56" height="56" loading="lazy"><div><span class="lab">Bonus 3</span><h3>Le Protocole Nuit</h3><p>Les positions et mouvements doux pour les épaules qui te réveillent quand tu dors dessus.</p><span class="lim">Offert jusqu'au 30/11</span></div></div>
+      <div class="row"><img class="thumb" src="img/bonus-bilan.jpg" alt="" width="56" height="56" loading="lazy"><div><span class="lab">Bonus 4</span><h3>Le Bilan Articulaire offert avec Christophe</h3><p>Un appel visio de 30 minutes à la fin de tes 7 jours pour faire le point sur ton épaule et savoir quoi faire ensuite. Christophe veut savoir ce que le programme a changé pour toi : c'est aussi comme ça qu'il l'améliore.</p><span class="lim">Places limitées : <span data-slots></span> par semaine</span></div></div>
     </div>
   </div>
 </section>
@@ -189,8 +204,8 @@
     <div class="why">
       <h2>Pourquoi seulement <span data-price></span>&nbsp;€&nbsp;?</h2>
       <p>Pour moins que le prix d'une séance, tu repars avec une routine que tu peux refaire seul, à vie. Christophe veut que le maximum de sportifs découvrent sa méthode, puis choisissent de continuer avec lui ou pas.</p>
-      <p>Le prix de lancement s'arrête le 30 novembre à 23 h 59. Ensuite, le programme passe à <span data-price-after></span> €.</p>
-      <p class="countdown">Fin du prix de lancement dans <span class="timer" data-countdown>…</span></p>
+      <p data-launch-only>Le prix de lancement s'arrête le 30 novembre à 23 h 59. Ensuite, le programme passe à <span data-price-after></span> €.</p>
+      <p class="countdown" data-launch-only>Fin du prix de lancement dans <span class="timer" data-countdown>…</span></p>
     </div>
     <form class="offer pay" id="paiement" onsubmit="return false" data-reveal>
       <div class="mock-tag">Maquette : Stripe sera branché avec les données de Christophe</div>
@@ -201,25 +216,27 @@
         <li><svg class="ico ico-trust"><use href="#ok"/></svg>Bilan Articulaire offert avec Christophe</li>
       </ul>
       <div class="price"><s class="was big-was"><span data-price-after></span> €</s><span class="big"><span data-price></span> €</span><span class="badge">-<span data-pct></span> %</span></div>
-      <p class="then" style="margin:6px 0 18px">Prix de lancement jusqu'au 30/11 à 23 h 59, ensuite <span data-price-after></span> €.</p>
-      <div class="express"><span>Apple Pay</span><span class="g">Google Pay</span></div>
+      <p class="then" style="margin:6px 0 18px" data-launch-only>Prix de lancement jusqu'au 30/11 à 23 h 59, ensuite <span data-price-after></span> €.</p>
+      <div class="express"><button type="button" data-ic>Apple Pay</button><button type="button" class="g" data-ic>Google Pay</button></div>
       <div class="or">ou par carte</div>
-      <label class="field"><span>E-mail <small>(ton accès arrive ici)</small></span><div class="input ph">toi@exemple.fr</div></label>
+      <label class="field"><span>E-mail <small>(ton accès arrive ici)</small></span><input class="input" type="email" name="email" autocomplete="email" spellcheck="false" placeholder="toi@exemple.fr" data-ic></label>
       <label class="field"><span>Carte</span>
         <div class="input ph card-num">1234 1234 1234 1234<span style="font-size:12px;letter-spacing:.04em">VISA · MC · CB</span></div>
         <div class="card-row"><div class="input ph">MM / AA</div><div class="input ph">CVC</div></div>
       </label>
       <div class="bump">
+        <!-- Angle proposé par l'audit, à valider par Douglas : adapter sa séance quand ça coince -->
         <label for="bump"><input type="checkbox" id="bump"><span class="t">Oui, j'ajoute le Guide Feu Vert pour <span data-bump-price></span>&nbsp;€</span></label>
         <div class="feu" aria-hidden="true"><i style="background:#16A34A"></i><i style="background:#F59E0B"></i><i style="background:#DC2626"></i></div>
-        <p>Développé, tractions, dips, wall balls… Pour chaque mouvement qui coince, tu sais en 10 secondes si tu le gardes, si tu l'adaptes, ou par quoi le remplacer. 12 fiches + 1 vidéo de Christophe. Proposé uniquement ici.</p>
+        <p>Pour tes séances pendant que ton épaule récupère : développé, tractions, dips, wall balls… Pour chaque mouvement qui coince, la version à faire à la place, pour continuer à t'entraîner sans forcer dessus. 12 fiches + 1 vidéo de Christophe. Proposé uniquement ici.</p>
       </div>
       <div class="totals">
         <div><span>Épaules Bulletproof</span><span><span data-price></span> €</span></div>
         <div data-bump-line hidden><span>Guide Feu Vert</span><span><span data-bump-price></span> €</span></div>
         <div class="tot"><span>Total</span><span><span data-total></span> €</span></div>
       </div>
-      <label class="legal"><input type="checkbox">Je veux accéder au programme tout de suite et je renonce à mon droit de rétractation de 14 jours. Ma garantie satisfait ou remboursé de 14 jours reste valable.</label>
+      <label class="legal" id="consent-wrap"><input type="checkbox" id="consent" aria-describedby="consent-err">Je veux accéder au programme tout de suite et je renonce à mon droit de rétractation de 14 jours. Ma garantie satisfait ou remboursé de 14 jours reste valable.</label>
+      <p class="err" id="consent-err" role="alert" hidden>Coche la case juste au-dessus pour accéder au programme tout de suite.</p>
       <button class="btn block" id="pay"><span>Je soulage mon épaule · <span data-total></span>&nbsp;€</span></button>
       <div class="fine"><span><svg><use href="#lock"/></svg>Paiement sécurisé Stripe</span><span><svg><use href="#bolt"/></svg>Accès immédiat</span><span><svg><use href="#shield"/></svg>Garantie 14 jours</span></div>
     </form>
@@ -249,12 +266,12 @@
 <!-- 12. Témoignages complets -->
 <section id="temoignages" style="padding-top:0">
   <div class="wrap">
-    <h2>Trois sportifs, trois épaules, le même déclic</h2>
+    <h2>Ce que Christophe obtient en suivi individuel</h2>
     <div class="stories">
-      <article class="story" data-reveal>
+      <article class="story" id="histoire-rayan" data-reveal>
         <figure class="story-vid">
           <video src="img/temoignage-rayan.mp4" poster="img/temoignage-rayan-poster.jpg" controls playsinline preload="none" controlslist="nodownload" aria-label="Extrait de l'interview vidéo de Rayan avec Christophe"></video>
-          <figcaption><span class="play" aria-hidden="true"></span>Rayan raconte, en vidéo · 36 s</figcaption>
+          <figcaption><span class="play" aria-hidden="true"></span>Rayan raconte · 36 s · sous-titré</figcaption>
         </figure>
         <div class="story-body">
           <span class="tag">Musculation</span>
@@ -266,25 +283,10 @@
           <p class="res"><svg class="ico ico-trust"><use href="#ok"/></svg><span>Douleur de 8/10 à 0 en 3 mois. Développé couché sans douleur, ni le lendemain.</span></p>
         </div>
       </article>
-      <article class="story" data-reveal>
-        <figure class="story-vid">
-          <video src="img/temoignage-jeremy.mp4" poster="img/temoignage-jeremy-poster.jpg" controls playsinline preload="none" controlslist="nodownload" aria-label="Extrait de l'interview vidéo de Jérémy avec Christophe"></video>
-          <figcaption><span class="play" aria-hidden="true"></span>Jérémy raconte, en vidéo · 28 s</figcaption>
-        </figure>
-        <div class="story-body">
-          <span class="tag">CrossFit</span>
-          <h3>Des deux épaules à l'arrêt au handstand sans douleur</h3>
-          <p class="ctx"><b>Jérémy, 35 ans</b> · CrossFit et foot, sport arrêté pendant des mois</p>
-          <blockquote><q>C'était beaucoup de douleurs au repos, au travail, dans le sport, du coup arrêt du sport, en espérant que ça passe mais ça n'a pas fonctionné.</q><cite>Avant</cite></blockquote>
-          <blockquote><q>j'ai réussi à faire les 10, 3 fois unbroken, sans gêne, sans douleur.</q><cite>Ses pompes, avant faites sur les genoux</cite></blockquote>
-          <blockquote><q>L'autre fois, je me suis amusé à faire du handstand et de la marche sur les mains, j'avais pas de douleur.</q><cite>Après 3 mois</cite></blockquote>
-          <p class="res"><svg class="ico ico-trust"><use href="#ok"/></svg><span>Il vit sans douleur et a repris ses WOD : HSPU, handstand walk, clean and jerk.</span></p>
-        </div>
-      </article>
-      <article class="story" data-reveal>
+      <article class="story" id="histoire-maite" data-reveal>
         <figure class="story-vid">
           <video src="img/temoignage-maite.mp4" poster="img/temoignage-maite-poster.jpg" controls playsinline preload="none" controlslist="nodownload" aria-label="Extrait de l'interview vidéo de Maïté avec Christophe"></video>
-          <figcaption><span class="play" aria-hidden="true"></span>Maïté raconte, en vidéo · 22 s</figcaption>
+          <figcaption><span class="play" aria-hidden="true"></span>Maïté raconte · 22 s · sous-titré</figcaption>
         </figure>
         <div class="story-body">
           <span class="tag">Pole dance</span>
@@ -307,12 +309,11 @@
     <figure class="me-photo" style="margin:0"><img src="img/christophe-bras-croises.jpg" alt="Christophe, bras croisés, souriant" width="1000" height="666" loading="lazy"></figure>
     <div>
       <h2>Christophe, le kiné des épaules de sportifs</h2>
-      <p>Christophe est masseur-kinésithérapeute diplômé d'État. Il a fait un choix rare : ne travailler que sur une seule articulation, l'épaule, et presque uniquement avec des sportifs. CrossFit, Hyrox, muscu : ses patients ne veulent pas entendre « arrête tout pendant 6 semaines ». Lui non plus.</p>
+      <p>Christophe est masseur-kinésithérapeute diplômé d'État. Il a fait un choix rare : ne travailler que sur une seule articulation, l'épaule, et presque uniquement avec des sportifs. CrossFit, muscu, pole dance : ses patients ne veulent pas entendre « arrête tout pendant 6 semaines ». Lui non plus.</p>
       <p>Sur Instagram, il montre chaque semaine ce qu'il fait en cabinet. Épaules Bulletproof, c'est cette méthode, mise en 7 jours pour que tu puisses la faire seul, chez toi ou à la salle.</p>
       <ul class="facts">
-        <li><svg class="ico ico-trust"><use href="#ok"/></svg><span>Kiné du sport, spécialisé épaule <span class="todo">diplôme, année</span></span></li>
+        <li><svg class="ico ico-trust"><use href="#ok"/></svg><span>Kiné du sport, spécialisé épaule</span></li>
         <li><svg class="ico ico-trust"><use href="#ok"/></svg><span>18 k sportifs sur Instagram (@nopainmov3ment)</span></li>
-        <li><svg class="ico ico-trust"><use href="#ok"/></svg><span>129 sportifs reçus en bilan d'épaule en un an <span class="todo">chiffre à confirmer</span></span></li>
       </ul>
     </div>
   </div>
@@ -337,17 +338,17 @@
 <!-- 15. CTA final navy -->
 <section class="final">
   <div class="narrow">
-    <h2>Ton épaule te laisse t'entraîner</h2>
+    <h2>Dans 7 jours, tu sais quoi faire pour ton épaule</h2>
     <p class="sub">8 minutes par jour, en échauffement. Garantie satisfait ou remboursé 14 jours.</p>
     <a class="btn" data-checkout href="#paiement">Je soulage mon épaule <span class="arr">→</span></a>
-    <div class="price-line"><s class="was"><span data-price-after></span> €</s> <b><span data-price></span> €</b> jusqu'au 30/11 · Fin dans <span data-countdown>…</span></div>
+    <div class="price-line"><s class="was"><span data-price-after></span> €</s> <b><span data-price></span> €</b> <span data-launch-only>jusqu'au 30/11 · Fin dans <span data-countdown>…</span></span></div>
   </div>
 </section>
 
 <footer class="site-foot">
   <div class="wrap">
-    <nav><a href="#">Mentions légales</a><a href="#">CGV</a><a href="#">Politique de confidentialité</a><a href="#">Contact</a></nav>
-    <p>© 2026 No Pain Movement · <span class="todo">Raison sociale · SIRET</span></p>
+    <nav><a href="mentions-legales">Mentions légales</a><a href="cgv">CGV</a><a href="confidentialite">Politique de confidentialité</a><a href="mentions-legales#contact">Contact</a></nav>
+    <p>© 2026 No Pain Movement</p>
     <p>Ce site ne fait pas partie du site Facebook™ ou de Meta Platforms, Inc. Il n'est pas non plus approuvé par Facebook™ de quelque manière que ce soit. FACEBOOK™ est une marque déposée de Meta Platforms, Inc.</p>
     <p>Les informations de ce programme ne remplacent pas une consultation médicale. Les résultats varient selon les personnes et dépendent de la régularité de la pratique. En cas de doute, consulte un professionnel de santé.</p>
   </div>

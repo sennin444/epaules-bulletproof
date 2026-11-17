@@ -5,7 +5,9 @@ window.EB_CONFIG = {
   priceAfter: 97,            // prix barré : Douglas confirme le passage réel à 97 € après le 30/11
   bumpPrice: 12,             // Guide Feu Vert (order bump)
   upsellPrice: 47,           // Analyse vidéo avant ton Bilan
-  showDiscountBadge: true,   // pastille « -72 % » (calculée : 27 au lieu de 97)
+  showDiscountBadge: true,   // pastille de réduction
+  discountPct: 70,           // décision de Douglas : « -70 % » (le calcul exact donnerait 72)
+  showMockTags: true,        // étiquettes « Maquette » : passer à false une fois Stripe branché
 
   // Fin du prix de lancement (heure de Paris)
   launchEndsAt: "2026-11-30T23:59:00+01:00",
