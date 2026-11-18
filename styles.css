@@ -581,3 +581,7 @@ p, li, q { text-wrap: pretty; }
 .vid-wait{display:grid;justify-items:center;gap:6px;color:#fff;text-align:center;padding:20px}
 .vid-wait .play{position:static;margin-bottom:6px}
 .vid-wait span:last-child{color:#94A3B8;font-size:14px}
+
+/* Qui suis-je : miniature en format large (18/11) */
+.me-photo.me-wide img{aspect-ratio:3/2;object-position:50% 50%}
+.hero-photo img{object-position:50% 40%}
