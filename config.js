@@ -3,7 +3,7 @@ window.EB_CONFIG = {
   // Prix
   price: 27,
   priceAfter: 97,            // prix barré : Douglas confirme le passage réel à 97 € après le 30/11
-  bumpPrice: 12,             // Guide Feu Vert (order bump)
+  bumpPrice: 12,             // Guide Performance (order bump)
   upsellPrice: 47,           // Analyse vidéo avant ton Bilan
   showDiscountBadge: true,   // pastille de réduction
   discountPct: 70,           // décision de Douglas : « -70 % » (le calcul exact donnerait 72)

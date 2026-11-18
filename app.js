@@ -44,6 +44,13 @@
     });
   }
   if (cds.length) { tick(); setInterval(tick, 20000); }
+  var bigs = $$("[data-cd]");
+  function tickBig() {
+    var s = Math.max(0, Math.floor((end - Date.now()) / 1000));
+    var v = { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
+    bigs.forEach(function (el) { el.textContent = pad(v[el.getAttribute("data-cd")]); });
+  }
+  if (bigs.length) { tickBig(); setInterval(tickBig, 1000); }
 
   // Barre mobile : apparaît après le CTA du hero
   var sticky = document.querySelector(".sticky"), heroCta = document.querySelector(".hero .btn"), finalSec = document.querySelector(".final");
