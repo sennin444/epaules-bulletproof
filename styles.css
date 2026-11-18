@@ -575,3 +575,9 @@ p, li, q { text-wrap: pretty; }
 .vstack > * { min-width: 0; }
 .core { overflow: hidden; }
 .days { scroll-padding-left: 20px; }
+
+/* Témoignage en attente de vidéo (18/11) */
+.story-wait{background:#0F172A;aspect-ratio:16/9;margin:0;display:grid;place-items:center}
+.vid-wait{display:grid;justify-items:center;gap:6px;color:#fff;text-align:center;padding:20px}
+.vid-wait .play{position:static;margin-bottom:6px}
+.vid-wait span:last-child{color:#94A3B8;font-size:14px}

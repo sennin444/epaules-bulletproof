@@ -78,7 +78,7 @@
       e.preventDefault();
       if (consent && !consent.checked) { err.hidden = false; wrap.classList.add("need"); consent.focus(); return; }
       ic();
-      location.href = "merci?total=" + (c.price + (bump.checked ? c.bumpPrice : 0)) + (bump.checked ? "&bump=1" : "");
+      location.href = "acces?total=" + (c.price + (bump.checked ? c.bumpPrice : 0)) + (bump.checked ? "&bump=1" : "");
     });
   }
 
@@ -138,6 +138,6 @@
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq("init", c.metaPixelId); fbq("track", "PageView");
     var mt = /[?&]total=(\d+)/.exec(location.search);
-    if (mt && /merci/.test(location.pathname)) fbq("track", "Purchase", { value: +mt[1], currency: "EUR" });
+    if (mt && /acces/.test(location.pathname)) fbq("track", "Purchase", { value: +mt[1], currency: "EUR" });
   }
 })();
