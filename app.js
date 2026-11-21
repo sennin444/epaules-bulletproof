@@ -8,6 +8,12 @@
     c = Object.assign({}, c, { price: c.priceAfter, showDiscountBadge: false });
     $$("[data-launch-only], s.was, .big-was, .sticky s").forEach(function (el) { el.hidden = true; el.style.display = "none"; });
   }
+  if (c.whopUrl) {
+    c.showMockTags = false;
+    $$("#paiement .express, #paiement .or, #paiement .field").forEach(function (el) { el.parentNode.removeChild(el); });
+    $$("[data-whop-note]").forEach(function (el) { el.hidden = false; });
+    if (!c.whopUrlBump) $$("#paiement .bump, [data-bump-line]").forEach(function (el) { el.parentNode.removeChild(el); });
+  }
   if (c.showMockTags === false) $$(".mock-tag, .mock-note").forEach(function (el) { el.remove(); });
 
   $$("[data-price]").forEach(function (el) { el.textContent = c.price; });
@@ -62,23 +68,25 @@
     hide.forEach(function (el) { new IntersectionObserver(function (e) { vis.set(el, e[0].isIntersecting); atFinal = Array.from(vis.values()).some(Boolean); upd(); }).observe(el); });
   }
 
-  // Checkout (maquette) : bump + total
-  var bump = document.getElementById("bump");
-  if (bump) {
+  // Paiement : bump + total, puis Whop (ou la maquette tant que whopUrl est vide)
+  var bump = document.getElementById("bump"), pay = document.getElementById("pay");
+  var bumpOn = function () { return !!(bump && bump.isConnected && bump.checked); };
+  if (pay) {
     var paint = function () {
-      var on = bump.checked, total = c.price + (on ? c.bumpPrice : 0);
+      var on = bumpOn(), total = c.price + (on ? c.bumpPrice : 0);
       $$("[data-total]").forEach(function (el) { el.textContent = total; });
       $$("[data-bump-line]").forEach(function (el) { el.hidden = !on; });
     };
-    bump.addEventListener("change", paint); paint();
-    var pay = document.getElementById("pay");
+    if (bump) bump.addEventListener("change", paint);
+    paint();
     var consent = document.getElementById("consent"), err = document.getElementById("consent-err"), wrap = document.getElementById("consent-wrap");
     if (consent) consent.addEventListener("change", function () { if (consent.checked) { err.hidden = true; wrap.classList.remove("need"); } });
     pay.addEventListener("click", function (e) {
       e.preventDefault();
       if (consent && !consent.checked) { err.hidden = false; wrap.classList.add("need"); consent.focus(); return; }
       ic();
-      location.href = "acces?total=" + (c.price + (bump.checked ? c.bumpPrice : 0)) + (bump.checked ? "&bump=1" : "");
+      if (c.whopUrl) { location.href = (bumpOn() && c.whopUrlBump) ? c.whopUrlBump : c.whopUrl; return; }
+      location.href = "acces?total=" + (c.price + (bumpOn() ? c.bumpPrice : 0)) + (bumpOn() ? "&bump=1" : "");
     });
   }
 

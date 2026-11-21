@@ -16,7 +16,14 @@ window.EB_CONFIG = {
   bilanSlotsPerWeek: 10,
 
   // Liens (vides = maquette : le parcours reste dans le site)
-  checkoutUrl: "",           // Stripe plus tard. Vide = /checkout (maquette)
+  checkoutUrl: "",           // laisser vide : le bouton descend vers le bloc #paiement de la page
+
+  // Paiement Whop (compte de Christophe). Dès que whopUrl est rempli : les champs carte de la maquette
+  // et les étiquettes « Maquette » disparaissent, le bouton envoie vers Whop.
+  // Dans Whop, redirection après achat : https://<domaine>/acces?total=27  (offre seule)
+  //                                      https://<domaine>/acces?total=39&bump=1  (offre + Guide Feu Vert)
+  whopUrl: "",               // A_REMPLIR : lien de paiement Whop de l'offre à 27 €
+  whopUrlBump: "",           // lien Whop de l'offre à 39 € avec le Guide. Vide = pas de bump affiché
   upsellUrl: "",             // Stripe plus tard. Vide = /acces?upsell=1
   accessUrl: "https://train.strivee.app/program/FnjyIkJzfcY9zCMhrlJd",
   calendlyUrl: "",           // A_REMPLIR : Calendly « Bilan Articulaire »
